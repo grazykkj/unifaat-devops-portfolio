@@ -1,0 +1,10 @@
+# Evidencia pendente de execucao
+
+Este arquivo deve conter a saida real do comando abaixo, gerada com as credenciais AWS de laboratorio configuradas:
+
+```powershell
+terraform plan -out=tfplan
+terraform show -no-color tfplan | Tee-Object terraform-plan-output.txt
+```
+
+Nao foi incluido um plano inventado, pois o resultado depende da conta AWS, do usuario autenticado e de recursos IAM ja existentes. Apos executar os comandos, substitua este conteudo pela evidencia real do plano antes da entrega.
