@@ -1,0 +1,10 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfstate
+terraform.tfstate.backup
+*.pem
+*.key
+crash.log
+crash.*.log
+aws-creds.sh
