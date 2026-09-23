@@ -1,0 +1,117 @@
+[0m[1mdata.aws_ami.amazon_linux: Reading...[0m[0m
+[0m[1mdata.aws_availability_zones.available: Reading...[0m[0m
+[0m[1mdata.aws_availability_zones.available: Read complete after 1s [id=us-east-1][0m
+[0m[1mdata.aws_ami.amazon_linux: Read complete after 1s [id=ami-0bdbbea3e76315b75][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+[31m-[0m/[32m+[0m destroy and then create replacement[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_s3_bucket.terraform_state[0m is tainted, so must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_s3_bucket" "terraform_state" {
+      [32m+[0m[0m acceleration_status         = (known after apply)
+      [32m+[0m[0m acl                         = (known after apply)
+      [33m~[0m[0m arn                         = "arn:aws:s3:::technova-terraform-state-0291be20" -> (known after apply)
+      [33m~[0m[0m bucket_domain_name          = "technova-terraform-state-0291be20.s3.amazonaws.com" -> (known after apply)
+      [32m+[0m[0m bucket_prefix               = (known after apply)
+      [32m+[0m[0m bucket_regional_domain_name = (known after apply)
+      [32m+[0m[0m hosted_zone_id              = (known after apply)
+      [33m~[0m[0m id                          = "technova-terraform-state-0291be20" -> (known after apply)
+      [32m+[0m[0m object_lock_enabled         = false
+      [32m+[0m[0m policy                      = (known after apply)
+      [32m+[0m[0m region                      = (known after apply)
+      [33m~[0m[0m request_payer               = "BucketOwner" -> (known after apply)
+        tags                        = {
+            "Aula"    = "05"
+            "Name"    = "technova-terraform-state"
+            "Project" = "TechNova"
+            "Purpose" = "Terraform Remote State"
+        }
+      [32m+[0m[0m website_domain              = (known after apply)
+      [32m+[0m[0m website_endpoint            = (known after apply)
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m[0m cors_rule (known after apply)
+
+      [33m~[0m[0m grant (known after apply)
+      [31m-[0m[0m grant {
+          [31m-[0m[0m id          = "7876923b0f3906681ebcd727facae1a7ce73f783e0783992adb00cddf11b912b" [90m-> null[0m[0m
+          [31m-[0m[0m permissions = [
+              [31m-[0m[0m "FULL_CONTROL",
+            ] [90m-> null[0m[0m
+          [31m-[0m[0m type        = "CanonicalUser" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+
+      [33m~[0m[0m lifecycle_rule (known after apply)
+
+      [33m~[0m[0m logging (known after apply)
+
+      [33m~[0m[0m object_lock_configuration (known after apply)
+
+      [33m~[0m[0m replication_configuration (known after apply)
+
+      [33m~[0m[0m server_side_encryption_configuration (known after apply)
+      [31m-[0m[0m server_side_encryption_configuration {
+          [31m-[0m[0m rule {
+              [31m-[0m[0m bucket_key_enabled = false [90m-> null[0m[0m
+
+              [31m-[0m[0m apply_server_side_encryption_by_default {
+                  [31m-[0m[0m sse_algorithm     = "AES256" [90m-> null[0m[0m
+                    [90m# (1 unchanged attribute hidden)[0m[0m
+                }
+            }
+        }
+
+      [33m~[0m[0m versioning (known after apply)
+      [31m-[0m[0m versioning {
+          [31m-[0m[0m enabled    = false [90m-> null[0m[0m
+          [31m-[0m[0m mfa_delete = false [90m-> null[0m[0m
+        }
+
+      [33m~[0m[0m website (known after apply)
+    }
+
+[1m  # aws_s3_bucket_public_access_block.terraform_state[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_public_access_block" "terraform_state" {
+      [32m+[0m[0m block_public_acls       = true
+      [32m+[0m[0m block_public_policy     = true
+      [32m+[0m[0m bucket                  = (known after apply)
+      [32m+[0m[0m id                      = (known after apply)
+      [32m+[0m[0m ignore_public_acls      = true
+      [32m+[0m[0m restrict_public_buckets = true
+    }
+
+[1m  # aws_s3_bucket_server_side_encryption_configuration.terraform_state[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_server_side_encryption_configuration" "terraform_state" {
+      [32m+[0m[0m bucket = (known after apply)
+      [32m+[0m[0m id     = (known after apply)
+
+      [32m+[0m[0m rule {
+          [32m+[0m[0m apply_server_side_encryption_by_default {
+              [32m+[0m[0m sse_algorithm     = "AES256"
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            }
+        }
+    }
+
+[1m  # aws_s3_bucket_versioning.terraform_state[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_versioning" "terraform_state" {
+      [32m+[0m[0m bucket = (known after apply)
+      [32m+[0m[0m id     = (known after apply)
+
+      [32m+[0m[0m versioning_configuration {
+          [32m+[0m[0m mfa_delete = (known after apply)
+          [32m+[0m[0m status     = "Enabled"
+        }
+    }
+
+[1mPlan:[0m [0m4 to add, 0 to change, 1 to destroy.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
