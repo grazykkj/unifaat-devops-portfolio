@@ -30,8 +30,8 @@ subnets = {
   }
 }
 
-ami_id   = "ami-0fef201115eefe936"
-key_name = "vockey"
+ami_id   = "ami-xxxxxxxxxxxxxx"
+key_name = "xxxxxx"
 
 db_username = "technova"
 db_password = "TechnovaDev123"
